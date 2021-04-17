@@ -1,18 +1,18 @@
 var addTwoNumbers = function (l1, l2) {
 
     // Extract numbers from the array
-    const arr1 = l1.map((a, b) => a + b, 0)
+    const arr1 = parseInt(l1.join(''));
     console.log("arr1", arr1);
-    const arr2 = l2.reduce((a, b) => a + b, 0)
+    const arr2 = parseInt(l2.join(''));
     console.log("arr2", arr2);
     const addNumbers = arr1 + arr2
-    const result = Array.from(addNumbers.toString())
+    const result = Array.from(addNumbers.toString());
 
-    const toNums = result.map(Number)
+    const toNums = result.reverse().map(Number);
 
-    console.log(toNums);
+    console.log('result', toNums);
 
-    return toNums
+    return toNums;
 };
 
-addTwoNumbers([2, 4, 3], [5, 6, 4])
+addTwoNumbers([9, 9, 9, 9, 9, 9, 9], [9, 9, 9, 9])
