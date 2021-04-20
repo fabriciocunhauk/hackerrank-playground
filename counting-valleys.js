@@ -1,22 +1,33 @@
 function countingValleys(steps, path) {
-    let result = 0;
-    let upsAndDowns = 0;
-    let mountain = 0;
+    let upAndDownPointer = 0;
+    let downCount = 0;
     let valley = 0;
 
     for (var i = 0; i < path.length; i++) {
-        console.log(upsAndDowns)
+        console.log(upAndDownPointer)
         if (path[i] === "U") {
-            upsAndDowns++
+            upAndDownPointer++
         }
         if (path[i] === "D") {
-            upsAndDowns--
+            upAndDownPointer--
+        }
+
+        if (upAndDownPointer < 0) {
+            downCount = 1;
+        }
+        if (upAndDownPointer > 0) {
+            downCount = 0;
+        }
+        if (downCount === 1 && upAndDownPointer === 0) {
+            valley++;
         }
     }
 
-
-    console.log(result)
-    return result;
+    return valley;
 }
+console.log(countingValleys(12, ["D", "D", "U", "U", "D", "D", "U", "D", "U", "U", "U", "D", "D", "D", "U", "U", "D", "U"]));
 
-countingValleys(8, ["U", "D", "D", "D", "U", "D", "U", "U"]);
+
+
+// Test 1 (8, ["U", "D", "D", "D", "U", "D", "U", "U"])
+// Test 2 (12, ["D","D","U","U","D","D","U","D","U","U","U","D"])
