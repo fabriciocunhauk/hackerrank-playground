@@ -1,14 +1,22 @@
 function countingValleys(steps, path) {
+    let obj = {};
     let upAndDownPointer = 0;
     let downCount = 0;
     let valley = 0;
 
     for (var i = 0; i < path.length; i++) {
         console.log(upAndDownPointer)
-        if (path[i] === "U") {
+
+
+        obj['char'] = path[i];
+        console.log(obj);
+
+
+
+        if (obj.char === "U") {
             upAndDownPointer++
         }
-        if (path[i] === "D") {
+        if (obj.char === "D") {
             upAndDownPointer--
         }
 
