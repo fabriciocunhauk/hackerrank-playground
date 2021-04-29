@@ -4,12 +4,17 @@ function jumpingOnClouds(c) {
     for (let i = 0; i < c.length; i++) {
         // if next cloud = 0 jump
         // if cloud = 0 jump
-        let cloud = c[i]
+        let currentCloud = c[i]
         let nextCloud = c[i + 1]
-        if (cloud === 0) {
-            if (nextCloud === 0) {
-                numOfJumps++
-            }
+        let next2Cloud = c[i + 2]
+        if (currentCloud === nextCloud && currentCloud === next2Cloud) {
+            currentCloud = next2Cloud;
+            numOfJumps++;
+        }
+
+        if (currentCloud === nextCloud && currentCloud !== next2Cloud) {
+            currentCloud = nextCloud;
+            numOfJumps++;
         }
     }
 
