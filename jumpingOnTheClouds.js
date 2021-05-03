@@ -11,11 +11,6 @@ function jumpingOnClouds(c) {
             currentCloud = next2Cloud;
             numOfJumps++;
         }
-
-        if (currentCloud === nextCloud && currentCloud !== next2Cloud) {
-            currentCloud = nextCloud;
-            numOfJumps++;
-        }
     }
 
     return numOfJumps;
